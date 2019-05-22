@@ -1,4 +1,4 @@
-function [axons,packing] = axonpack_main(numelobj, d_mean, d_var, gap, iter_max)
+function [axons,packing] = func_axonpack_main(numelobj, d_mean, d_var, gap, iter_max)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
