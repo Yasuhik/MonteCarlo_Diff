@@ -30,7 +30,7 @@ function [endpoint, new_th, new_th_z, restflight, centerpoint] = func_findhitobj
 % •‰•ûŒü‚È‚ç-1‚ª“ü‚é.ŒÀŠE“Ë”j‚µ‚½‚Æ‚±‚ë‚Åˆê“x~‚Ü‚é‚Ì‚Å2ˆÈã‚Ì”‚Í“ü‚ç‚È‚¢.
 
 
-numelobj = length(center);
+numelobj = size(center,1);
 % endpoint_ = cell(numelobj+1,1); % +1‚ÍxyzŒÀŠE(‚Ì‚¤‚¿ˆê”Ô‹ß‚¢‚à‚Ì)‚ğŒó•â‚É“ü‚ê‚é‚½‚ß
 % centerpoint_ = cell(numelobj+1,1);
 % results = zeros(numelobj+1,3); % new_th, new_th_z, restflight
@@ -39,12 +39,13 @@ numelobj = length(center);
 endpoint_ = zeros(numelobj,3);
 centerpoint_ = zeros(numelobj,3);
 results = zeros(numelobj,3); % new_th, new_th_z, restflight
-
 for r = 1:numelobj
 %     [endpoint_{r},~,results(r,1), results(r,2), results(r,3), centerpoint_{r}] =...
 %         func_endpoint190327(R(r),center{r},height(r),trans(r),startpoint,th_xy,th_z,flight,sn);
-    [endpoint_(r,:), results(r,1), results(r,2), results(r,3), centerpoint_(r,:)] =...
+
+[endpoint_(r,:), results(r,1), results(r,2), results(r,3), centerpoint_(r,:)] =...
         func_endpoint190511(R(r),center(r,:),trans(r),startpoint,th_xy,th_z,flight,mode3D,sn);
+   
 end
 
 % % x,y,zŒÀŠE‚É’B‚µ‚½ê‡‚Ìc‘¶flight‚ğ‹‚ß‚é.
